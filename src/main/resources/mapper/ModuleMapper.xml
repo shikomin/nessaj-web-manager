@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nessaj.web.manager.mapper.ModuleMapper">
+
+    <select id="findAllModule" resultType="Module">
+        SELECT * FROM module_table;
+    </select>
+
+    <insert id="createModule" parameterType="Module">
+        INSERT INTO module_table(mid,mname,minfo,status) VALUES(#{mid},#{mname},#{minfo},#{status});
+    </insert>
+
+    <select id="findModuleById" resultType="Module">
+        SELECT * FROM module_table where mid=#{arg0};
+    </select>
+
+</mapper>

@@ -1,0 +1,31 @@
+server:
+  port: 9097
+  ssl:
+    key-store: ${KEYSTORE_PATH}
+    key-store-password: ${KEYSTORE_PASSWORD}
+    keyStoreType: ${KEYSTORE_TYPE}
+    keyAlias: ${KEYSTORE_ALIAS}
+    enabled: true
+    trust-store: ${TRUSTSTORE_PATH}
+    trust-store-password: ${TRUSTSTORE_PASSWORD}
+    trust-store-type: ${TRUSTSTORE_TYPE}
+    client-auth: need
+    trust-store-provider: SUN
+  servlet:
+    context-path: /
+spring:
+  #mysql数据库连接配置
+  datasource:
+    driver-class-name: ${DATABASE_DRIVER_CLASS}
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.nessaj.web.manager.entities
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true

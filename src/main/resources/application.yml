@@ -14,6 +14,13 @@ server:
   servlet:
     context-path: /
 spring:
+  #上传大小设置
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+      resolve-lazily: false
   #mysql数据库连接配置
   datasource:
     driver-class-name: ${DATABASE_DRIVER_CLASS}

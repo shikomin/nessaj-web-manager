@@ -6,11 +6,12 @@ package com.nessaj.web.manager.common.constants;
  * @author keming
  * @Date 2022/02/10 18:59
  */
-public class TemporaryConstants {
+public class TempConstants {
 
     public static final String MODULE_LOCAL_STORAGE = "E:/Nessaj/local-workspace/manager/packages/";
     public static final String MODULE_UNZIP_PATH = "E:/Nessaj/local-workspace/manager/modules/";
     public static final String RIGHT_SEPARATOR = "/";
-    public static final String MODULE_MANIFEST_FILE = "manifest.json";
+    public static final String MODULE_JSON = "module.json";
+    public static final String MODULE_KEY = "module";
 
 }

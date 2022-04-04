@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public interface ModuleMapper {
 
-    Integer createModule(Module module);
+    Integer addModule(Module module);
 
     List<Module> findAllModule();
 

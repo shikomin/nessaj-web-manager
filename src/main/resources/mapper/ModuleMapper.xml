@@ -6,8 +6,8 @@
         SELECT * FROM module_table;
     </select>
 
-    <insert id="createModule" parameterType="Module">
-        INSERT INTO module_table(mid,mname,minfo,status) VALUES(#{mid},#{mname},#{minfo},#{status});
+    <insert id="addModule" parameterType="Module">
+        INSERT INTO module_table(mname,type,description,status,apis,create_time) VALUES(#{mname},#{type.type},#{description},#{status.status},#{apis.aid},#{createTime});
     </insert>
 
     <select id="findModuleById" resultType="Module">

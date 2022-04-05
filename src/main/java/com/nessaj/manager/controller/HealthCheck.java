@@ -1,6 +1,6 @@
-package com.nessaj.web.manager.controller;
+package com.nessaj.manager.controller;
 
-import com.nessaj.web.manager.common.constants.ManagerConstant;
+import com.nessaj.manager.common.constants.ManagerConstant;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;

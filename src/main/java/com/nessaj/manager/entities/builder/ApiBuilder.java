@@ -1,7 +1,7 @@
-package com.nessaj.web.manager.entities.builder;
+package com.nessaj.manager.entities.builder;
 
-import com.nessaj.web.manager.entities.Api;
-import com.nessaj.web.sdk.httpclient.common.enums.HttpMethod;
+import com.nessaj.manager.entities.Api;
+import com.nessaj.sdk.httpclient.common.enums.HttpMethod;
 
 /**
  * @author keming

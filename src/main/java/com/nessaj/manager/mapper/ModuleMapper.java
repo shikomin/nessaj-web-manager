@@ -1,6 +1,6 @@
-package com.nessaj.web.manager.mapper;
+package com.nessaj.manager.mapper;
 
-import com.nessaj.web.manager.entities.Module;
+import com.nessaj.manager.entities.Module;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -1,12 +1,11 @@
-package com.nessaj.web.manager.entities.builder;
+package com.nessaj.manager.entities.builder;
 
-import com.nessaj.web.manager.common.enums.ModuleStatus;
-import com.nessaj.web.manager.common.enums.ModuleType;
-import com.nessaj.web.manager.entities.ApiList;
-import com.nessaj.web.manager.entities.Module;
+import com.nessaj.manager.common.enums.ModuleType;
+import com.nessaj.manager.entities.ApiList;
+import com.nessaj.manager.entities.Module;
+import com.nessaj.manager.common.enums.ModuleStatus;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author keming

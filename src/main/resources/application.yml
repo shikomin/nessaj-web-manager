@@ -32,7 +32,7 @@ spring:
 mybatis:
   #mapper配置文件
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.nessaj.web.manager.entities
+  type-aliases-package: com.nessaj.manager.entities
   #开启驼峰命名
   configuration:
     map-underscore-to-camel-case: true

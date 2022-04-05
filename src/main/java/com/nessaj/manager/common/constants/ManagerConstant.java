@@ -1,4 +1,4 @@
-package com.nessaj.web.manager.common.constants;
+package com.nessaj.manager.common.constants;
 
 public class ManagerConstant {
 

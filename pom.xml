@@ -6,7 +6,7 @@
 
     <groupId>com.nessaj.web</groupId>
     <artifactId>nessaj-web-manager</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.2</version>
     <packaging>war</packaging>
 
 

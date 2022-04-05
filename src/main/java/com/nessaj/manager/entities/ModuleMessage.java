@@ -1,6 +1,6 @@
-package com.nessaj.web.manager.entities;
+package com.nessaj.manager.entities;
 
-import com.nessaj.web.manager.common.enums.OperationResult;
+import com.nessaj.manager.common.enums.OperationResult;
 import lombok.Getter;
 import lombok.Setter;
 

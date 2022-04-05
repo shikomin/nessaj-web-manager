@@ -1,4 +1,4 @@
-package com.nessaj.web.manager;
+package com.nessaj.manager;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

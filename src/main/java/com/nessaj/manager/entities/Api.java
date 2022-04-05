@@ -1,7 +1,7 @@
-package com.nessaj.web.manager.entities;
+package com.nessaj.manager.entities;
 
-import com.nessaj.web.manager.entities.builder.ApiBuilder;
-import com.nessaj.web.sdk.httpclient.common.enums.HttpMethod;
+import com.nessaj.manager.entities.builder.ApiBuilder;
+import com.nessaj.sdk.httpclient.common.enums.HttpMethod;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

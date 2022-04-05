@@ -1,9 +1,9 @@
-package com.nessaj.web.manager.entities;
+package com.nessaj.manager.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.nessaj.web.manager.common.enums.ModuleStatus;
-import com.nessaj.web.manager.common.enums.ModuleType;
-import com.nessaj.web.manager.entities.builder.ModuleBuilder;
+import com.nessaj.manager.common.enums.ModuleStatus;
+import com.nessaj.manager.common.enums.ModuleType;
+import com.nessaj.manager.entities.builder.ModuleBuilder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

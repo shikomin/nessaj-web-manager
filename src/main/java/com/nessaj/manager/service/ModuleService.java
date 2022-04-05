@@ -1,6 +1,6 @@
-package com.nessaj.web.manager.service;
+package com.nessaj.manager.service;
 
-import com.nessaj.web.manager.entities.Module;
+import com.nessaj.manager.entities.Module;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

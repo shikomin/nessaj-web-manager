@@ -1,4 +1,4 @@
-package com.nessaj.web.manager.common.enums;
+package com.nessaj.manager.common.enums;
 
 /**
  * @author keming

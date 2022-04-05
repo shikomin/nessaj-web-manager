@@ -1,11 +1,10 @@
-package com.nessaj.web.manager.controller;
+package com.nessaj.manager.controller;
 
-import com.nessaj.web.manager.common.constants.ManagerConstant;
-import com.nessaj.web.manager.common.enums.OperationResult;
-import com.nessaj.web.manager.entities.Module;
-import com.nessaj.web.manager.entities.ModuleMessage;
-import com.nessaj.web.manager.service.ModuleService;
-import com.sun.org.apache.regexp.internal.RE;
+import com.nessaj.manager.common.constants.ManagerConstant;
+import com.nessaj.manager.common.enums.OperationResult;
+import com.nessaj.manager.entities.Module;
+import com.nessaj.manager.entities.ModuleMessage;
+import com.nessaj.manager.service.ModuleService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

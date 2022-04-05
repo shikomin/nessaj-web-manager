@@ -1,19 +1,20 @@
-package com.nessaj.web.manager.service.impl;
+package com.nessaj.manager.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.nessaj.web.manager.common.constants.ErrorMessage;
-import com.nessaj.web.manager.common.constants.TempConstants;
-import com.nessaj.web.manager.common.enums.ModuleStatus;
-import com.nessaj.web.manager.common.enums.ModuleType;
-import com.nessaj.web.manager.entities.Api;
-import com.nessaj.web.manager.entities.ApiList;
-import com.nessaj.web.manager.entities.Module;
-import com.nessaj.web.manager.mapper.ModuleMapper;
-import com.nessaj.web.manager.service.ModuleService;
-import com.nessaj.web.sdk.common.exception.UnzipFileException;
-import com.nessaj.web.sdk.httpclient.common.constants.StringConstants;
-import com.nessaj.web.sdk.utils.JsonUtil;
-import com.nessaj.web.sdk.utils.ZipArchiveUtil;
+import com.nessaj.manager.common.constants.TempConstants;
+import com.nessaj.manager.common.enums.ModuleStatus;
+import com.nessaj.manager.common.enums.ModuleType;
+import com.nessaj.manager.entities.Api;
+import com.nessaj.manager.entities.ApiList;
+import com.nessaj.manager.entities.Module;
+import com.nessaj.manager.mapper.ModuleMapper;
+import com.nessaj.manager.service.ModuleService;
+import com.nessaj.manager.common.constants.ErrorMessage;
+import com.nessaj.sdk.common.constants.SymbolSet;
+import com.nessaj.sdk.common.exception.UnzipFileException;
+import com.nessaj.sdk.httpclient.common.constants.StringConstants;
+import com.nessaj.sdk.utils.JsonUtil;
+import com.nessaj.sdk.utils.ZipArchiveUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 @Service("moduleService")
 public class ModuleServiceImpl implements ModuleService {
@@ -51,7 +51,7 @@ public class ModuleServiceImpl implements ModuleService {
         // 上传包
         File dest = new File(TempConstants.MODULE_LOCAL_STORAGE
                 + StringConstants.SEPARATOR_RIGHT + fileName);
-        String unzipDir = TempConstants.MODULE_UNZIP_PATH + fileName.substring(0, fileName.lastIndexOf(".")) + TempConstants.RIGHT_SEPARATOR;
+        String unzipDir = TempConstants.MODULE_UNZIP_PATH + fileName.substring(0, fileName.lastIndexOf(".")) + SymbolSet.RIGHT_SEPARATOR;
         (new File(unzipDir)).mkdir();
         try {
             file.transferTo(dest);
@@ -62,12 +62,12 @@ public class ModuleServiceImpl implements ModuleService {
             e.printStackTrace();
         }
         JSONObject moduleJson = JsonUtil.str2json(JsonUtil.str2json(JsonUtil.readJsonFile(unzipDir
-                        + TempConstants.RIGHT_SEPARATOR
+                        + SymbolSet.RIGHT_SEPARATOR
                         + TempConstants.MODULE_JSON))
-                .getString(TempConstants.MODULE_KEY));
-        Module module = Module.custom().setType(moduleJson.getString("type").equals("java_module") ? ModuleType.JAVA_MODULE : ModuleType.PYTHON_MODULE)
-                .setMname(moduleJson.getString("mname"))
-                .setDescription(moduleJson.getString("description"))
+                .getString(TempConstants.MODULE_JSON_KEY));
+        Module module = Module.custom().setType(moduleJson.getString(TempConstants.MODULE_JSON_KEY_TYPE).equals(TempConstants.JAVA_MODULE) ? ModuleType.JAVA_MODULE : ModuleType.PYTHON_MODULE)
+                .setMname(moduleJson.getString(TempConstants.MODULE_JSON_KEY_NAME))
+                .setDescription(moduleJson.getString(TempConstants.MODULE_JSON_KEY_DESCRIPTION))
                 .setApis(getApiList(moduleJson))
                 .setStatus(ModuleStatus.UPLOADED)
                 .setCreateTime(new Date()).build();
@@ -78,13 +78,13 @@ public class ModuleServiceImpl implements ModuleService {
     }
 
     private ApiList getApiList(JSONObject module) {
-        JSONObject apisJson = JsonUtil.str2json(module.getString("apis"));
+        JSONObject apisJson = JsonUtil.str2json(module.getString(TempConstants.APIS_JSON_KEY));
         List<Api> apis = new ArrayList<>();
         for (Map.Entry entry : apisJson.entrySet()) {
             JSONObject api = JsonUtil.str2json(entry.getValue().toString());
-            apis.add(Api.custom().setMapping(api.getString("mapping"))
-                    .setDescription(api.getString("description"))
-                    .setMethod(api.getString("method")).build());
+            apis.add(Api.custom().setMapping(api.getString(TempConstants.API_JSON_KEY_MAPPING))
+                    .setDescription(api.getString(TempConstants.API_JSON_KEY_DESCRIPTION))
+                    .setMethod(api.getString(TempConstants.API_JSON_KEY_METHOD)).build());
         }
         ApiList apiList = new ApiList();
         apiList.setApis(apis);
